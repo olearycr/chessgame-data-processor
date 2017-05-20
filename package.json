@@ -1,0 +1,11 @@
+{
+  "name": "chessprocess",
+  "version": "1.0.0",
+  "description": "process to read file with chess game data and put it into database",
+  "main": "chessprocess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "colear",
+  "license": "ISC"
+}
