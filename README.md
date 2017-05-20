@@ -1,4 +1,4 @@
-# chessgame-data-processor
+# Chessgame Data Processor
 Node js code to take chess game notation from a text file and put it into a mysql database asynchronously.
 
 To start, play a chessgame anywhere and grab the notation from it. I recommend using Chess.com and analyzing the game after. Instructions below.
@@ -23,6 +23,11 @@ FOR CHESS.COM NOTATION:
 
 FOR OTHER NOTATION:
   See step 6 above. Use the example to make sure all game notation is on one line and with spaces.
+  
+FOR DATABASE DESIGN:
+ - Create a new database. Database will only have two tables. Note that you will have to change the sql queries in the code to account          for database table names and actual database name.
+    Table 1: game_id (bigint, not null, auto-increment, primary key), game_title (varchar(50), not null), data_played (datetime, nullable), location_played (varchar(50), nullable)
+    Table 2: move_id (bigint, not null, auto increment, primary key), game_id (bigint, not null, foreign key -> game_id table 1), move_number (smallint, not null), white_move (varchar(10), not null), black_move (varchar(10), not null) 
   
 As of now, 1000 chess games take about 3 seconds to process and insert.
 
